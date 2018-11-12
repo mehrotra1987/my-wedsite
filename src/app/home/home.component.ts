@@ -5,7 +5,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit{
-  title = 'This is the home component';
+  save_the_date = '31st January 2019';
+  groom_name = 'Rohit';
+  bride_name = 'Anshika';
+  weds = 'Weds';
+
   public myInterval: number = 3000;
   public activeSlideIndex: number = 0;
   public noWrapSlides:boolean = false;

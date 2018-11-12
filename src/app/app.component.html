@@ -1,12 +1,75 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-</div>
-<h2>Here are some links to help you start: </h2>
-<div>
-  <app-home></app-home>
-</div>
+<!-- start page-wrapper -->
+<div class="page-wrapper">
 
-<router-outlet></router-outlet>
+  <!-- start preloader -->
+  <div class="preloader" style="display: none;">
+    <div class="inner">
+      <span class="icon">
+        <i class="fi flaticon-two"></i>
+      </span>
+    </div>
+  </div>
+  <!-- end preloader -->
+  <!-- start of home -->
+  <app-home></app-home>
+  <!--End of home-->
+  <!--Start Header-->
+  <app-nav-bar></app-nav-bar>
+  <!-- end of header -->
+
+
+  <!-- start wedding-couple-section -->
+  <app-about-couple></app-about-couple>
+  <!-- end wedding-couple-section -->
+
+
+  <!-- start count-down-section -->
+  <app-wedding-count-down></app-wedding-count-down>
+  <!-- end count-down-section -->
+
+
+  <!-- start story-section -->
+  <app-our-story></app-our-story>
+  <!-- end story-section -->
+
+
+  <!-- start cta -->
+  <app-celebration-header></app-celebration-header>
+  <!-- end cta -->
+
+
+
+  <!-- start events-section -->
+  <app-wedding-events></app-wedding-events>
+  <!-- end events-section -->
+
+
+  <!-- start inportant-people-section -->
+  <app-our-family></app-our-family>
+  <!-- end inportant-people-section -->
+
+
+  <!-- start gallery-section -->
+  <app-gallery></app-gallery>
+  <!-- end gallery-section -->
+
+
+
+  <!-- start rsvp-section -->
+  <app-rsvp></app-rsvp>
+  <!-- end rsvp-section -->
+
+
+  <!-- start getting-there-section -->
+  <app-wedding-venue></app-wedding-venue>
+  <!-- end getting-there-section -->
+
+  <!-- start footer -->
+  <app-footer></app-footer>
+  <!-- end footer -->
+
+</div>
+<!-- end of page-wrapper -->
+
+
+<!-- <app-home></app-home> -->
