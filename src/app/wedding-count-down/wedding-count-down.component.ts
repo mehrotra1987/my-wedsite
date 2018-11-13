@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { interval } from 'rxjs';
+import { map } from 'rxjs/operators';
+import { timer } from 'rxjs';
 
 @Component({
   selector: 'app-wedding-count-down',
@@ -7,30 +10,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WeddingCountDownComponent implements OnInit {
   isCustomTemplate = true;
-  finishDate = 'January 31, 2019 00:00';
-  days1;
-  hours1;
-  minutes1;
-  seconds1;
-  textColor = 'black';
+  wedding_date = new Date('January 31, 2019 00:00:00');
+  days;
+  hours;
+  minutes;
+  seconds;
+  current_date;
+  days_left;
+  source = interval(1000);
+  subscription = this.source.subscribe(val => this.daysLeftCounter());
 
   ngOnInit() {
   }
 
-  onDaysChanged(days) {
-    this.days1 = days;
-  }
-
-  onHoursChanged(hours) {
-    this.hours1 = hours;
-  }
-
-  onMinutesChanged(minutes) {
-    this.minutes1 = minutes;
-  }
-
-  onSecondsChanged(seconds) {
-    this.seconds1 = seconds;
+  daysLeftCounter() {
+    this.current_date = new Date();
+    this.days_left = this.wedding_date.getTime() - this.current_date.getTime();
+    this.days = Math.floor(this.days_left / (1000 * 60 * 60 * 24));
+    this.hours = Math.floor((this.days_left % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    this.minutes = Math.floor((this.days_left % (1000 * 60 * 60)) / (1000 * 60));
+    this.seconds = Math.floor((this.days_left % (1000 * 60)) / 1000);
   }
 
 }
